@@ -1,0 +1,83 @@
+[{
+    "title": "Banana bread",
+    "level": "Hard",
+    "ingredients": [
+      "2 bananas",
+      "1/4 cup of nut butter",
+      "1/4 cup og maple syrup",
+      "3/4 cup of oat flour",
+      "2 eggs",
+      "1/2 tsp baking soda",
+      "1 tsp baking powder",
+      "1/4 tsp salt",
+      "1 tsp cinnamon",
+      "1 tsp vainilla",
+      "1/2 cup of chocolate chips"
+    ],
+    "instructions": [
+      "Preheat oven to 375 degrees.",
+      "Mix all wet ingredients in a bowl. Set aside.",
+      "Mix all dry ingredients together in a separate bowl. Add also the chocolate chips, this way they won't go to the bottom of the recipient.",
+      "Pour wet ingredients into dry and mix well. It's normal to have some clumps.",
+      "Grease a bread pan or use a silicone recipient (no need to grease if using the latter option).",
+      "Pour batter into the recipient.",
+      "Bake for 50 min - 1 hour or until toothpick comes out clean.",
+      "Let cool in the baking recipient for 10 min.",
+      "Let cool on cooling rack for 20 min.",
+      "ENJOY!!!"
+    ],
+    "dishType": "Dessert",
+    "image": "https://images.unsplash.com/photo-1606101204735-85ad3a8bfd81?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80",
+    "duration": 90
+  },
+  {
+    "title": "Honey mustard dressing",
+    "level": "Easy",
+    "ingredients": [
+      "2 tbs mustard",
+      "2 tbs honey"
+    ],
+    "instructions": [
+      "Mix both ingredients.",
+      "Ready to enjoy with salads, chicken, etc."
+    ],
+    "dishType": "Other",
+    "image": "https://images.unsplash.com/photo-1625600243103-1dc6824c6c8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1664&q=80",
+    "duration": 5
+  },
+  {
+    "title": "Classic vinaigrette",
+    "level": "Easy",
+    "ingredients": [
+      "2 tbs olive oil",
+      "2 tbs aceto balsamico di modena",
+      "Pinch of salt",
+      "Pinch of pepper"
+    ],
+    "instructions": [
+      "Mix ingredients.",
+      "Ready to enjoy with salad of choice."
+    ],
+    "dishType": "Other",
+    "image": "https://images.unsplash.com/photo-1623855244697-5d8fbe9c7892?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80",
+    "duration": 5
+  },
+  {
+    "title": "PB cookies",
+    "level": "Medium",
+    "ingredients": [
+      "1 cup PB",
+      "1 cup sugar",
+      "1 egg"
+    ],
+    "instructions":[
+      "Preheat oven to 350 degrees.",
+      "Mix ingredients.",
+      "Bake for 20 min.",
+      "Let cool and enjoy."
+    ],
+    "dishType": "Dessert",
+    "image": "https://images.unsplash.com/photo-1607919965349-c3c790913de7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80",
+    "duration": 30
+  }
+]
