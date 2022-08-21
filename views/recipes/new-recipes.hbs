@@ -1,0 +1,31 @@
+<h1>New Recipe</h1>
+<form action="/recipes/new-recipes" method="POST">
+    <label> Title
+      <input type="text" name="name">
+    </label>
+    <label> Level
+      <select name="level">
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
+    </label>
+    <label> Dish Type
+      <select name="dishtype">
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Snack">Snack</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Other">Other</option>
+      </select>
+    </label>
+    <label> Image
+      <input type="text" name="image">
+    </label>
+    <label> Duration
+      <input type="text" name="duration">
+    </label>
+
+    <button type="submit">Create</button>
+</form>

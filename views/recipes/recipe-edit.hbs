@@ -1,0 +1,17 @@
+<h1>Edit Recipe</h1>
+<form action="/recipes/recipe-list{{recipe._id}}" method="POST">
+    <label> Title
+      <input type="text" name="name" value="{{recipe.title}}">
+    </label>
+    <label> Level
+      <input type="text" name="level" value="{{recipe.level}}">
+    </label>
+    <label> Dish Type
+      <input type="text" name="dishtype"  value="{{recipe.dishtype}}">
+    </label>
+    <label> Image
+      <input type="text" name="image"  value="{{recipe.image}}">
+    </label>
+
+    <button type="submit">Update</button>
+</form>
