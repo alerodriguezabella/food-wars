@@ -1,0 +1,20 @@
+{{#each recipe}}
+<p>{{title}}</p>
+<p>{{level}}</p>
+<ul>
+{{#each ingredient}}
+    <li>{{this}}</li>
+{{/each}}
+</ul>
+<p>Instructions: {{intructions}}</p>
+<p>Dish type: {{dishType}}</p>
+<img src="{{image}}">
+<p>Duration: {{duration}}</p>
+<a href="/comments/comments-list">Comments</a>
+{{#if Admin}}
+<a href="/recipes/recipe-edit:id">Edit Recipe</a>
+<form action="/recipes/recipe-delete{{_id}}" method="POST">
+    <button type="submit">Delete</button>
+</form>
+{{/if}}
+{{/each}}
