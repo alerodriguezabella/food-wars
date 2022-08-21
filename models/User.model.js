@@ -1,6 +1,5 @@
 const { Schema, model } = require("mongoose");
 
-// TODO: Please make sure you edit the user model to whatever makes sense in this case
 const userSchema = new Schema(
   {
     username: {
@@ -16,8 +15,8 @@ const userSchema = new Schema(
       lowercase: true,
       trim: true
     },
-    password: {type:String},
-    isAdmin: {type: Boolean, default: false},
+    password: { type:String },
+    isAdmin: { type: Boolean, default: false }
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

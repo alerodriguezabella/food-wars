@@ -1,7 +1,8 @@
-module.exports=(req,res,next) => {
-    if (req.session.user.isAdmin) {
+module.exports = (req,res,next) => {
+    if(req.session.user.isAdmin) {
         next();
-    }else{
+    } else {
         res.redirect('/')
     }
 }
+
