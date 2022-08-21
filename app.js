@@ -24,9 +24,34 @@ const projectName = "food-wars";
 
 app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
 
+const session =require('express-session');
+const mongoStore = require('connect-mongo');
+const mongoose = require('mongoose');
+
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            maxAge: 1000*60*60*24,
+        },
+        store: new mongoStore({
+            mongoUrl: 'mongodb://0.0.0.0/food-wars',
+            })
+    })
+)
+
 // 👇 Start handling routes here
 const index = require("./routes/index.routes");
 app.use("/", index);
+
+const authRoutes = require ('./routes/auth.routes');
+app.use('/auth', authRoutes)
+
+const recRoutes = require ('./routes/recipe.routes');
+app.use('/recipes', recRoutes)
+
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
