@@ -1,25 +1,26 @@
-{{!-- {{#each recipe}}
-<p>{{title}}</p>
-<p>{{level}}</p>
-<ul>
-{{#each ingredient}}
-    <li>{{this}}</li>
-{{/each}}
-</ul>
+{{#each recipe}}
+<h3>{{title}}</h3>
+    <p>Level: {{level}}</p>
+    <p>Dish type: {{dishType}}</p>
+    <p>Duration: {{duration}}min</p>
+    <img class="food-images" src="{{image}}" />
+    <p>Ingredients:</p>
+    <ul>
+        {{#each ingredients}}
+            <li>{{this}}</li>
+        {{/each}}
+    </ul>
 <p>Instructions: {{intructions}}</p>
-<p>Dish type: {{dishType}}</p>
-<img src="{{image}}">
-<p>Duration: {{duration}}</p>
 <a href="/comments/comments-list">Comments</a>
-{{#if Admin}}
+{{#if user.isAdmin}}
 <a href="/recipes/recipe-edit:id">Edit Recipe</a>
 <form action="/recipes/recipe-delete{{_id}}" method="POST">
     <button type="submit">Delete</button>
 </form>
 {{/if}}
-{{/each}} --}}
+{{/each}}
 
-<a href="/">Back</a>
+{{!-- <a href="/">Back</a>
 {{#each recipe}}
     <h3>{{title}}</h3>
     <p>Level: {{level}}</p>
@@ -43,4 +44,4 @@
     <form action="/recipes/{{id}}/delete" method="POST">
       <button>Delete</button>
     </form>
-{{/each}}
+{{/each}} --}}
