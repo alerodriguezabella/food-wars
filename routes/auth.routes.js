@@ -117,22 +117,13 @@ router.post("/login", isLoggedOut, (req, res, next) => {
       errorMessage: "Please provide your username.",
     });
   }
-
-  // Here we use the same logic as above
-  // - either length based parameters or we check the strength of a password
-  if (password.length < 8) {
-    return res.status(400).render("auth/login", {
-      errorMessage: "Your password needs to be at least 8 characters long.",
-    });
-  }
-
   // Search the database for a user with the username submitted in the form
   User.findOne({ username })
     .then((user) => {
       // If the user isn't found, send the message that user provided wrong credentials
       if (!user) {
         return res.status(400).render("auth/login", {
-          errorMessage: "Wrong credentials.",
+          errorMessage: "Wrong username.",
         });
       }
 
@@ -140,7 +131,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
       bcrypt.compare(password, user.password).then((isSamePassword) => {
         if (!isSamePassword) {
           return res.status(400).render("auth/login", {
-            errorMessage: "Wrong credentials.",
+            errorMessage: "Wrong password.",
           });
         }
         req.session.user = user;
