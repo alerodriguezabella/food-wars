@@ -35,17 +35,10 @@ router.post("/signup", isLoggedOut, (req, res) => {
     });
   }
 
-  if (password.length < 8) {
-    return res.status(400).render("auth/signup", {
-      errorMessage: "Your password needs to be at least 8 characters long.",
-    });
-  }
-
   //   ! This use case is using a regular expression to control for special characters and min length
-  
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
 
-  if (!regex.test(password)) {
+  if (!regex.test(password) || password.length < 8) {
     return res.status(400).render("auth/signup", {
       errorMessage:
         "Password needs to have at least 8 chars and must contain at least one number, one lowercase and one uppercase letter.",
@@ -57,7 +50,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
     if (found) {
       return res
         .status(400)
-        .render("auth/signup", { errorMessage: "email already taken." });
+        .render("auth/signup", { errorMessage: "Email already taken." });
     }});
 
   // Search the database for a user with the username submitted in the form
@@ -66,7 +59,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
     if (found) {
       return res
         .status(400)
-        .render("auth/signup", { errorMessage: "username already taken." });
+        .render("auth/signup", { errorMessage: "Username already taken." });
     }
 
     // if user is not found, create a new user - start with hashing the password
@@ -95,7 +88,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
         if (error.code === 11000) {
           return res.status(400).render("auth/signup", {
             errorMessage:
-              "email need to be unique. The email you chose is already in use.",
+              "Email needs to be unique. The email you chose is already in use.",
           });
         }
         return res
