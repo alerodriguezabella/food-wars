@@ -6,10 +6,13 @@ const User = require("../models/Comment.model")
 
 router.get('/comments-list/:id', isLoggedIn, (req,res) =>{
     const currentuser = req.session.user;
+    if(currentuser.isAdmin){
+        
+    }
     Recipe.findById(req.params.id)
-    .populate('owner')
+    .populate('comments')
 		.populate({
-			path: 'reviews',
+			path: 'comments',
 			populate: {
 				path: 'user'
 			}
@@ -57,7 +60,7 @@ router.post('/comment-delete:id', isLoggedIn,(req, res, next) => {
     .then( comment => {
         if(req.session.user._id===comment.user._id.toString()){
         Comment.findByIdAndDelete(req.params.id)
-        .then(()=>res.redirect('/recipes/recipes-list'))
+        .then(()=>res.redirect('/recipes/recipe-list'))
         }else{
             res.render('/recipes/recipes-list', {
                 errorMessage: 'You are not the owner of this comment.'

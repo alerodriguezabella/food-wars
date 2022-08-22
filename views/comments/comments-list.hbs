@@ -1,16 +1,17 @@
 <h2>Reviews</h2>
 {{#each recipe.comments}}
 <p>user: {{user.name}}</p>
+<p>Rating: {{rate}}</p>
 <p>Comment: {{comment}}</p>
 <a href="/comments/comment-edit/{{_id}}">Edit</a>
-<form action="/comments/review/{{_id}}/delete" method="POST">
+<form action="/comments/comment-delete{{_id}}" method="POST">
     <button type="submit">Delete</button>
 </form>
 {{/each}}
 {{#if currentuser}}
 <form action="/comments/comment-new/{{recipe._id}}" method="POST">
     <textarea name="comment" rows="4" cols="50"></textarea>
-    <select>
+    <select name="rate">
     <option value="1">1 - Poor</option>
     <option value="2">2 - Fair</option>
     <option value="3">3 - Good</option>
