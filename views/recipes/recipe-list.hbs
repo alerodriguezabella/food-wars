@@ -1,7 +1,29 @@
 {{#if user.isAdmin}}
     <a href="/recipes/new-recipe">Create Recipes</a>
 {{/if}}
-
+<form action="/recipes/recipe-list" method="POST">
+<label>Level: 
+<select name="level">
+    <option value="">None</option>
+    <option value="Easy">Easy</option>
+    <option value="Medium">Medium</option>
+    <option value="Hard">Hard</option>
+</select>
+</label>
+<label>Dish Type: 
+<select name="dishtype">
+    <option value="">None</option>
+    <option value="Breakfast">Breakfast</option>
+    <option value="Lunch">Lunch</option>
+    <option value="Snack">Snack</option>
+    <option value="Dinner">Dinner</option>
+    <option value="Dessert">Dessert</option>
+    <option value="Other">Other</option>
+</select>
+</label>
+<button type="submit">Filter</button>
+<a href="/recipes/recipe-list">Reset</a>
+</form>
 {{#each recipe}}
 <div class="card">
     <h3>{{title}}</h3>
