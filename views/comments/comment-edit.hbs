@@ -1,0 +1,13 @@
+
+<form action="/comments/comment-edit/{{_id}}" method="POST">
+    <textarea name="comment" rows="4" cols="50" >{{comment}}</textarea>
+    <select name="rate" value="{{rate}}">
+    <option value="1">1 - Poor</option>
+    <option value="2">2 - Fair</option>
+    <option value="3">3 - Good</option>
+    <option value="4">4 - Very Good</option>
+    <option value="5">5 - Excellent</option>
+    </select>
+    <p>by {{user.username}}</p>
+    <button type="submit">Submit</button>
+</form>
