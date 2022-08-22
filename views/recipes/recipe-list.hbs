@@ -11,11 +11,13 @@
         {{/each}}
     </ul>
 <p>Instructions: {{intructions}}</p>
-<a href="/comments/comments-list">Comments</a>
-{{#if user.isAdmin}}
-<a href="/recipes/recipe-edit:id">Edit Recipe</a>
+<a href="/comments/comments-list/{{_id}}">Comments</a>
+{{!-- {{#if User.isAdmin}} --}}
+<a href="/recipes/edit-recipe{{_id}}">Edit Recipe</a>
 <form action="/recipes/recipe-delete{{_id}}" method="POST">
     <button type="submit">Delete</button>
 </form>
-{{/if}}
+{{!-- {{/if}} --}}
 {{/each}}
+
+

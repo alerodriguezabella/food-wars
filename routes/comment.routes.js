@@ -4,24 +4,29 @@ const isLoggedIn = require("../middleware/isLoggedIn");
 const Recipe = require("../models/Recipe.model");
 const User = require("../models/Comment.model")
 
-router.get('/comments-list:id', isLoggedIn, (req,res) =>{
+router.get('/comments-list/:id', isLoggedIn, (req,res) =>{
     const currentuser = req.session.user;
     Recipe.findById(req.params.id)
-    .populate('comments')
-        .populate({path:'user'})
+    .populate('owner')
+		.populate({
+			path: 'reviews',
+			populate: {
+				path: 'user'
+			}
+		})
     .then( recipe => res.render('comments/comments-list', {recipe, currentuser}))
     .catch( Err => console.error(Err))
 })
 
-router.post('comments/comment-new:id', (req,res) => {
-    const userid = req.session.user._id;
+router.post('/comment-new/:id', (req,res) => {
     const id = req.params.id;
+    const userid = req.session.user._id;
     const {comment, rate} = req.body;
     Comment.create({user: userid, comment, rate})
     .then( comment => Recipe.findByIdAndUpdate(
         id, {$push: {comments: comment._id.toString()}}
     ))
-    .then(()=>res.redirect('/comments-list'+id))
+    .then(()=>res.redirect('/comments/comments-list/'+id))
     .catch( Err => console.error(Err))
 })
 
@@ -30,9 +35,9 @@ router.get('/comment-edit:id', (req,res)=>{
     .populate('user')
     .then( comment => {
         if(req.session.user._id===comment.user._id.toString()){
-            res.render('comments/comment-edit', comment)
+            res.render('comments/comment-edit'+req.params.id, comment)
         }else{
-            res.render('comments/comment-edit', {
+            res.render('comments/comment-edit'+req.params.id, {
                 errorMessage: 'You are not the owner of this comment.'})
         }
     })

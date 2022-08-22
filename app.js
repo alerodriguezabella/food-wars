@@ -36,6 +36,9 @@ app.use('/auth', authRouter)
 const recipeRouter = require ('./routes/recipe.routes');
 app.use('/recipes', recipeRouter)
 
+const comRouter = require ('./routes/comment.routes');
+app.use('/comments', comRouter)
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
