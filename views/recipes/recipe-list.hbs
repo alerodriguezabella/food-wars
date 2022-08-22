@@ -12,7 +12,7 @@
     </ul>
 <p>Instructions: {{intructions}}</p>
 <a href="/comments/comments-list/{{_id}}">Comments</a>
-{{!-- {{#if User.isAdmin}} --}}
+{{!-- {{#if currentuser.isAdmin}} --}}
 <a href="/recipes/edit-recipe{{_id}}">Edit Recipe</a>
 <form action="/recipes/recipe-delete{{_id}}" method="POST">
     <button type="submit">Delete</button>
