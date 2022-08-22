@@ -1,23 +1,36 @@
+{{#if user.isAdmin}}
+    <a href="/recipes/new-recipe">Create Recipes</a>
+{{/if}}
+
 {{#each recipe}}
-<h3>{{title}}</h3>
+<div class="card">
+    <h3>{{title}}</h3>
     <p>Level: {{level}}</p>
     <p>Dish type: {{dishType}}</p>
     <p>Duration: {{duration}}min</p>
     <img class="food-images" src="{{image}}" />
     <p>Ingredients:</p>
-    <ul>
+    <ul class="justify">
         {{#each ingredients}}
-            <li>{{this}}</li>
+        <li>{{this}}</li>
         {{/each}}
     </ul>
-<p>Instructions: {{intructions}}</p>
-<a href="/comments/comments-list/{{_id}}">Comments</a>
-{{#if recipe.admin}}
-<a href="/recipes/edit-recipe{{_id}}">Edit Recipe</a>
-<form action="/recipes/recipe-delete{{_id}}" method="POST">
-    <button type="submit">Delete</button>
-</form>
-{{/if}}
+    <p>Instructions:</p>
+    <ol class="justify">
+        {{#each instructions}}
+        <li>{{this}}</li>
+        {{/each}}
+    </ol>
+    <a href="/comments/comments-list/{{_id}}">Comments</a> 
+    {{#if ../user.isAdmin}}
+    <span> | </span><a href="/recipes/edit-recipe/{{_id}}">Edit Recipe</a>
+    <form action="/recipes/delete-recipe/{{_id}}" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    {{/if}}
+</div>
 {{/each}}
+    
+
 
 

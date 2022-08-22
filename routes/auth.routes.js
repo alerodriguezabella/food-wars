@@ -14,10 +14,11 @@ const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
-router.get("/profile:id", isLoggedIn, (req, res) => {
+router.get("/profile/:id", isLoggedIn, (req, res) => {
     const user=req.session.user;
+    console.log(user)
     User.findById(req.params.id)
-    .then( cuser => res.render("auth/profile", {cuser, user}))
+    .then(user => res.render("auth/profile", {user}))
     .catch( Err => console.error(Err))
   });
 
