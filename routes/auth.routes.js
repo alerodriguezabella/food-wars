@@ -36,6 +36,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
   }
 
   //   ! This use case is using a regular expression to control for special characters and min length
+  
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
 
   if (!regex.test(password) || password.length < 8) {
@@ -116,7 +117,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
       // If the user isn't found, send the message that user provided wrong credentials
       if (!user) {
         return res.status(400).render("auth/login", {
-          errorMessage: "Wrong username.",
+          errorMessage: "Wrong Username.",
         });
       }
 

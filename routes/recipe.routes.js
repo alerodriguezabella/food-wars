@@ -10,6 +10,25 @@ router.get('/recipe-list', (req,res) => {
     .catch( Err => console.error(Err))
 })
 
+router.post('/recipe-list', (req,res) => {
+    const user =req.session.user;
+    const {level, dishtype} = req.body;
+    let filter ={};
+    if(level==="" && dishtype!==""){
+        filter = {dishType: dishtype}
+    }else if(level!=="" && dishtype===""){
+        filter = {level: level}
+    }else {
+        filter = {level: level, dishType: dishtype}
+    }
+    Recipe.find(
+        filter
+    )
+    .then(recipe =>{
+    res.render('recipes/recipe-list', {recipe, user})})
+    .catch( Err => console.error(Err))
+})
+
 router.get('/new-recipe', isAdmin, (req,res) => {
     const user=req.session.user;
     res.render('recipes/new-recipe', {user})
