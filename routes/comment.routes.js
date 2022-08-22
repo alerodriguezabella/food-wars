@@ -14,7 +14,7 @@ router.get('/comments-list/:id', isLoggedIn, (req,res) =>{
 				path: 'user'
 			}
 		})
-    .then( recipe => {
+    .then( recipe => { console.log(recipe.comments)
         res.render('comments/comments-list', {recipe, currentuser})})
     .catch( Err => console.error(Err))
 })

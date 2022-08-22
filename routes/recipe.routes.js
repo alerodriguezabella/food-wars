@@ -18,7 +18,7 @@ router.get('/new-recipe', isAdmin, (req,res) => {
 
 router.post('/new-recipe', isAdmin, (req,res) => {
     const {title, level, ingredients, instructions, dishType, image, duration} = req.body;
-    Recipe.create({title, level, ingredients, instructions, dishType, image, duration})
+    Recipe.create({title, level, ingredients: ingredients.split(';'), instructions: instructions.split(';'), dishType, image, duration})
     .then(() => res.redirect('/recipes/recipe-list'))
     .catch(Err => console.error(Err))
 })
@@ -31,7 +31,7 @@ router.get('/edit-recipe/:id', isAdmin, (req,res) => {
 
 router.post('/edit-recipe/:id', isAdmin, (req,res) => {
     const {title, level, ingredients, instructions, dishType, image, duration} = req.body;
-    Recipe.findByIdAndUpdate(req.params.id, {title, level, ingredients, instructions, dishType, image, duration})
+    Recipe.findByIdAndUpdate(req.params.id, {title, level, ingredients: ingredients.split(';'), instructions: instructions.split(';'), dishType, image, duration})
     .then(() => res.redirect('/recipes/recipe-list'))
     .catch(Err => console.error(Err))
 })

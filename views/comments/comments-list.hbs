@@ -1,7 +1,7 @@
 <a href="/recipes/recipe-list">Back</a>
 <h1>Reviews</h1>
 {{#each recipe.comments}}
-<p>user: {{user.name}}</p>
+<p>user: {{user.username}}</p>
 <p>Rating: {{rate}}</p>
 <p>Comment: {{comment}}</p>
 <a href="/comments/comment-edit/{{_id}}">Edit</a>
@@ -18,7 +18,7 @@
     <option value="3">3 - Good</option>
     <option value="4">4 - Very Good</option>
     <option value="5">5 - Excellent</option>
-</select>
+    </select>
     <button type="submit">Submit</button>
 </form>
 {{/if}}

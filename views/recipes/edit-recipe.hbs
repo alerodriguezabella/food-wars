@@ -1,17 +1,44 @@
 <a href="/recipes/recipe-list">Back</a>
 <h1>Edit Recipe</h1>
-<form action="/recipes/recipe-list{{recipe._id}}" method="POST">
+<form action="/recipes/edit-recipe/{{_id}}" method="POST">
     <label> Title
-      <input type="text" name="name" value="{{recipe.title}}">
+      <input type="text" name="title" value="{{title}}">
     </label>
     <label> Level
-      <input type="text" name="level" value="{{recipe.level}}">
+      <select name="level">
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
     </label>
     <label> Dish Type
-      <input type="text" name="dishtype"  value="{{recipe.dishtype}}">
+      <select name="dishtype">
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Snack">Snack</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Other">Other</option>
+      </select>
+    </label>
+    <label> Duration
+      <input type="text" name="duration" value="{{duration}}">
     </label>
     <label> Image
-      <input type="text" name="image"  value="{{recipe.image}}">
+      <input type="text" name="image" value="{{image}}">
+    </label>
+    <label>Ingredients:
+      <textarea name="ingredients" rows="10" cols="50" placeholder="Separate each line with a semicolon (;)">
+{{#each ingredients}}
+{{this}};
+{{/each}}</textarea>
+    </label>
+    <label>Instructions:
+      <textarea name="instructions"  rows="10" cols="50" placeholder="Separate each line with a semicolon (;)">
+{{#each instructions}}
+{{this}};
+{{/each}}
+</textarea>
     </label>
 
     <button type="submit">Update</button>
