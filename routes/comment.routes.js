@@ -48,7 +48,7 @@ router.get('/comment-edit/:id', (req,res)=>{
 router.post('/comment-edit/:id', (req,res) => {
     const {comment, rate} = req.body;
     Comment.findByIdAndUpdate(req.params.id, {comment, rate})
-    .then(() => res.redirect('/recipes/recipes-list'))
+    .then(() => res.redirect('/recipes/recipe-list'))
     .catch( Err => console.error(Err))
 })
 
