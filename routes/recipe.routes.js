@@ -3,24 +3,17 @@ const Recipe = require("../models/Recipe.model");
 const isAdmin = require("../middleware/isAdmin");
 
 router.get('/recipe-list', (req,res) => {
-    const user =req.session.user;
-    Recipe.find()
-    .then(recipe =>{
-    res.render('recipes/recipe-list', {recipe, user})})
-    .catch( Err => console.error(Err))
-})
-
-router.post('/recipe-list', (req,res) => {
-    const user =req.session.user;
-    const {level, dishtype} = req.body;
-    let filter ={};
-    if(level==="" && dishtype!==""){
-        filter = {dishType: dishtype}
-    }else if(level!=="" && dishtype===""){
+    const user = req.session.user;
+    const {level, dishType} = req.query;
+    let filter = null;
+    if(!level && dishType){
+        filter = {dishType: dishType}
+    }else if(level && !dishType){
         filter = {level: level}
-    }else {
-        filter = {level: level, dishType: dishtype}
+    }else if(level && dishType) {
+        filter = {level: level, dishType: dishType}
     }
+    // console.log(filter)
     Recipe.find(
         filter
     )
