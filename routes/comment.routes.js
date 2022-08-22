@@ -6,9 +6,6 @@ const User = require("../models/Comment.model")
 
 router.get('/comments-list/:id', isLoggedIn, (req,res) =>{
     const currentuser = req.session.user;
-    if(currentuser.isAdmin){
-        
-    }
     Recipe.findById(req.params.id)
     .populate('comments')
 		.populate({
@@ -17,7 +14,8 @@ router.get('/comments-list/:id', isLoggedIn, (req,res) =>{
 				path: 'user'
 			}
 		})
-    .then( recipe => res.render('comments/comments-list', {recipe, currentuser}))
+    .then( recipe => {
+        res.render('comments/comments-list', {recipe, currentuser})})
     .catch( Err => console.error(Err))
 })
 
@@ -33,21 +31,21 @@ router.post('/comment-new/:id', (req,res) => {
     .catch( Err => console.error(Err))
 })
 
-router.get('/comment-edit:id', (req,res)=>{
+router.get('/comment-edit/:id', (req,res)=>{
     Comment.findById(req.params.id)
     .populate('user')
     .then( comment => {
         if(req.session.user._id===comment.user._id.toString()){
-            res.render('comments/comment-edit'+req.params.id, comment)
+            res.render('comments/comment-edit', comment)
         }else{
-            res.render('comments/comment-edit'+req.params.id, {
+            res.render('comments/comment-edit', {
                 errorMessage: 'You are not the owner of this comment.'})
         }
     })
     .catch( Err => console.error(Err))
 })
 
-router.post('/comment-edit:id', (req,res) => {
+router.post('/comment-edit/:id', (req,res) => {
     const {comment, rate} = req.body;
     Comment.findByIdAndUpdate(req.params.id, {comment, rate})
     .then(() => res.redirect('/recipes/recipes-list'))

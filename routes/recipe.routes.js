@@ -3,8 +3,9 @@ const Recipe = require("../models/Recipe.model");
 const isAdmin = require("../middleware/isAdmin");
 
 router.get('/recipe-list', (req,res) => {
+    const user =req.session.user;
     Recipe.find()
-    .then(recipe =>{  const user = req.session.user
+    .then(recipe =>{
     res.render('recipes/recipe-list', {recipe, user})})
     .catch( Err => console.error(Err))
 })
