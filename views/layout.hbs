@@ -6,6 +6,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>{{appTitle}}</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="/stylesheets/style.css" />
    </head>
 
@@ -16,7 +19,7 @@
          <li id="to-right">
             <a href="/">Home</a> <span> | </span>
             {{#if user}}
-            <a href="/auth/profile{{user._id}}">Profile</a> <span> | </span>
+            <a href="/auth/profile/{{user._id}}">Profile</a> <span> | </span>
             <a href="/auth/logout">Logout</a>
             {{else}}
             <a href="/auth/signup">Signup</a> <span> | </span>
@@ -26,10 +29,6 @@
          </ul>
       </nav>
 
-      {{#if user.isAdmin}}
-         <a href="/recipes/new-recipe">Create Recipes</a>
-      {{/if}}
-   
       {{{body}}}
 
       <script src="/js/script.js"></script>
