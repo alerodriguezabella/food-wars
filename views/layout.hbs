@@ -17,9 +17,7 @@
             <a href="/">Home</a> <span> | </span>
             {{#if user}}
             <a href="/auth/profile{{user._id}}">Profile</a> <span> | </span>
-            <form id="logout-form" action="/auth/logout" method="POST">
-               <button type="submit">Logout</button>
-            </form>
+            <a href="/auth/logout">Logout</a>
             {{else}}
             <a href="/auth/signup">Signup</a> <span> | </span>
             <a href="/auth/login">Login</a>
