@@ -2,12 +2,12 @@ const router = require("express").Router();
 const Recipe = require("../models/Recipe.model");
 const isAdmin = require("../middleware/isAdmin");
 
-router.get('/', (req,res) => {
-    // const Admin = req.session.user.isAdmin
+router.get('/recipe-list', (req,res) => {
+    const user = req.session.user
     Recipe.find()
     .then(recipe => 
-    // res.render('recipes/recipes-list', {recipe, Admin}))
-    res.render('recipes/recipe-list', {recipe}))
+    res.render('recipes/recipes-list', {recipe, user}))
+    // res.render('recipes/recipe-list', {recipe}))
     .catch( Err => console.error(Err))
 })
 
