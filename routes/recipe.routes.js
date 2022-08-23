@@ -21,6 +21,17 @@ router.get('/recipe-list', (req,res) => {
     .catch( Err => console.error(Err))
 })
 
+router.get('/recipe-list-search', (req,res) => {
+    const user = req.session.user;
+    const {title} = req.query;
+    Recipe.find(
+        {title: title}
+    )
+    .then(recipe =>{
+    res.render('recipes/recipe-list', {recipe, user})})
+    .catch( Err => console.error(Err))
+})
+
 router.get('/new-recipe', isAdmin, (req,res) => {
     const user=req.session.user;
     res.render('recipes/new-recipe', {user})
