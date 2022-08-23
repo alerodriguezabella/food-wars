@@ -15,9 +15,13 @@ module.exports = app => {
   app.use(
     session({
       secret: process.env.SESSION_SECRET,
+      name: "passportCookie",
       resave: false,
       saveUninitialized: false,
       cookie: {
+        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+        secure: process.env.NODE_ENV === "production",
+        httpOnly: true,
         maxAge: 1000 * 60 * 60 * 24 // 60 * 1000 ms === 1 min
       },
       store: new MongoStore({
@@ -27,3 +31,4 @@ module.exports = app => {
     })
   );
 };
+

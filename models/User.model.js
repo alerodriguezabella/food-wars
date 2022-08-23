@@ -4,8 +4,10 @@ const userSchema = new Schema(
   {
     username: {
       type: String,
-      // unique: true -> Ideally, should be unique, but its up to you
+      unique: true,
     },
+    googleId: {
+      type: String,},
     email: {
       type: String,
       required: [true, 'Email is required.'],
