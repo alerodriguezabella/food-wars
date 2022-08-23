@@ -78,7 +78,16 @@
 </form>
 {{#each recipe}}
 <div class="card">
-    <h3>{{title}}</h3>
+    <div class="recipe-header">
+        <h3>{{title}}</h3>
+        {{#if ../user.isAdmin}}
+        <form class="admin-options" action="/recipes/delete-recipe/{{_id}}" method="POST">
+            <a href="/recipes/edit-recipe/{{_id}}" class="btn">Edit</a>
+            <button class="btn" type="submit">Delete</button>
+        </form>
+        {{/if}}
+    </div>
+    
     <p>Level: {{level}}</p>
     <p>Dish type: {{dishType}}</p>
     <p>Duration: {{duration}}min</p>
@@ -95,13 +104,10 @@
         <li>{{this}}</li>
         {{/each}}
     </ol>
-    <a href="/comments/comments-list/{{_id}}">Comments</a> 
-    {{#if ../user.isAdmin}}
-    <a href="/recipes/edit-recipe/{{_id}}">Edit Recipe</a>
-    <form action="/recipes/delete-recipe/{{_id}}" method="POST">
-        <button class="btn" type="submit">Delete</button>
-    </form>
-    {{/if}}
+    <div>
+        <a href="/comments/comments-list/{{_id}}" class="btn">Comments</a> 
+    </div>
+    
 </div>
 {{/each}}
 

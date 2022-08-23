@@ -1,13 +1,15 @@
 <a href="/recipes/recipe-list">Back</a>
-<h1>Reviews</h1>
+<h2>Reviews</h2>
 {{#each recipe.comments}}
-<p>user: {{user.username}}</p>
-<p>Rating: {{rate}}</p>
-<p>Comment: {{comment}}</p>
-<a href="/comments/comment-edit/{{_id}}">Edit</a>
-<form action="/comments/comment-delete{{_id}}" method="POST">
-    <button class="btn" type="submit">Delete</button>
-</form>
+<div class="review">
+    <p>user: {{user.username}}</p>
+    <p>Rating: {{rate}}</p>
+    <p>Comment: {{comment}}</p>
+    <a href="/comments/comment-edit/{{_id}}" class="btn">Edit</a>
+    <form action="/comments/comment-delete{{_id}}" method="POST">
+        <button class="btn" type="submit">Delete</button>
+    </form>
+</div>
 {{/each}}
 {{#if currentuser}}
 <form action="/comments/comment-new/{{recipe._id}}" method="POST">

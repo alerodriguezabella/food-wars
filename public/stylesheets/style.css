@@ -155,6 +155,21 @@ form {
   flex: 1;
 }
 
+.admin-options {
+  display: flex;
+  flex-direction: row;
+}
+
+.admin-options .btn {
+  margin-right: 5px;
+}
+
+.recipe-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 /* nav ul {
   border-bottom: 2px solid #CCD5AE;
   height: 30px;
@@ -199,6 +214,7 @@ form {
   height: 500px;
   object-fit: cover;
   border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 .card {
@@ -212,6 +228,14 @@ form {
   align-items: center;
   justify-content: center;
   margin: auto; */
+}
+
+.review {
+  background-color: #faf7f0;
+  padding: 50px;
+  border: none;
+  margin: 20px 0;
+  border-radius: 20px;
 }
 
 .justify {
