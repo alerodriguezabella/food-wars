@@ -24,10 +24,11 @@ router.get('/recipe-list', (req,res) => {
 router.get('/recipe-list-search', (req,res) => {
     const user = req.session.user;
     const {title} = req.query;
+   
     Recipe.find(
-        {title: title}
+        {title: { $regex: '.*' + title + '.*', $options: 'i' }},
     )
-    .then(recipe =>{
+    .then(recipe =>{ 
     res.render('recipes/recipe-list', {recipe, user})})
     .catch( Err => console.error(Err))
 })
