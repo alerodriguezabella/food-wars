@@ -6,19 +6,19 @@
 <p>Comment: {{comment}}</p>
 <a href="/comments/comment-edit/{{_id}}">Edit</a>
 <form action="/comments/comment-delete{{_id}}" method="POST">
-    <button type="submit">Delete</button>
+    <button class="btn" type="submit">Delete</button>
 </form>
 {{/each}}
 {{#if currentuser}}
 <form action="/comments/comment-new/{{recipe._id}}" method="POST">
     <textarea name="comment" rows="4" cols="50" required></textarea>
     <select name="rate">
-    <option value="1">1 - Poor</option>
-    <option value="2">2 - Fair</option>
-    <option value="3">3 - Good</option>
-    <option value="4">4 - Very Good</option>
-    <option value="5">5 - Excellent</option>
+    <option value="1">&#11088</option>
+    <option value="2">&#11088&#11088</option>
+    <option value="3">&#11088&#11088&#11088</option>
+    <option value="4">&#11088&#11088&#11088&#11088</option>
+    <option value="5">&#11088&#11088&#11088&#11088&#11088</option>
     </select>
-    <button type="submit">Submit</button>
+    <button class="btn" type="submit">Submit</button>
 </form>
 {{/if}}

@@ -5,14 +5,13 @@ const fileUploader = require('../config/cloudinary.config');
 
 router.get('/recipe-list', (req,res) => {
     const user = req.session.user;
-    const {level, dishType} = req.query;
-    let filter = null;
-    if(!level && dishType){
-        filter = {dishType: dishType}
-    }else if(level && !dishType){
-        filter = {level: level}
-    }else if(level && dishType) {
-        filter = {level: level, dishType: dishType}
+    const {level, dishType, title} = req.query;
+    let filter = {title: { $regex: '.*' + (title || "") + '.*', $options: 'i' }}
+    if(dishType){
+        filter.dishType = dishType
+    }
+    if(level){
+        filter.level = level
     }
     Recipe.find(
         filter
@@ -22,17 +21,17 @@ router.get('/recipe-list', (req,res) => {
     .catch( Err => console.error(Err))
 })
 
-router.get('/recipe-list-search', (req,res) => {
-    const user = req.session.user;
-    const {title} = req.query;
+// router.get('/recipe-list-search', (req,res) => {
+//     const user = req.session.user;
+//     const {title} = req.query;
    
-    Recipe.find(
-        {title: { $regex: '.*' + title + '.*', $options: 'i' }},
-    )
-    .then(recipe =>{ 
-    res.render('recipes/recipe-list', {recipe, user})})
-    .catch( Err => console.error(Err))
-})
+//     Recipe.find(
+//         {title: { $regex: '.*' + title + '.*', $options: 'i' }},
+//     )
+//     .then(recipe =>{ 
+//     res.render('recipes/recipe-list', {recipe, user})})
+//     .catch( Err => console.error(Err))
+// })
 
 router.get('/new-recipe', isAdmin, (req,res) => {
     const user=req.session.user;

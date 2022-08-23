@@ -1,35 +1,80 @@
+{{!-- <ul class="nav">
+    <li class="nav-item">
+        {{#if user.isAdmin}}
+        <a href="/recipes/new-recipe">Create Recipes</a>
+        {{/if}}
+    </li>
+</ul> --}}
+
 {{#if user.isAdmin}}
     <a href="/recipes/new-recipe">Create Recipes</a>
 {{/if}}
 
-<form action="/recipes/recipe-list-search" method="GET">
-<input type="text" placeholder="Search" name="title">
-<button type="submit">Search</button>
+{{!-- <form action="/recipes/recipe-list-search" method="GET"> --}}
+{{!-- <input type="text" placeholder="Search" name="title"> --}}
+{{!-- <button type="submit">Search</button>
+</form> --}}
+
+{{!-- <form class="form-inline" action="/recipes/recipe-list" method="GET">
+    <input name="title" class="form-control mr-sm-2" type="search" placeholder="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form> --}}
+
+
+{{!-- <form class="form-inline" action="/recipes/recipe-list" method="GET">
+
+<div class="form-group vertical">
+    <label>Search:</label>
+    <input name="title" class="form-control mr-sm-2" type="search" placeholder="Search by recipe title">
+</div>
+<div class="form-group vertical">
+    <label>Level:</label>
+    <select class="custom-select" name="level">
+        <option value="">None</option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+    </select>
+</div>
+<div class="form-group vertical">
+    <label>Dish Type:</label>
+    <select class="custom-select" name="dishType">
+        <option value="">None</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Snack">Snack</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Other">Other</option>
+    </select>
+</div> --}}
+
+<form class="form-inline" action="/recipes/recipe-list" method="GET">
+    <div class="form-row recipe-filter">
+        <input type="text" placeholder="Search" name="title">
+        <select class="custom-select" name="level">
+            <option value="">Level</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+        </select>
+        <select class="custom-select" name="dishType">
+            <option value="">Dish Type</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Snack">Snack</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Dessert">Dessert</option>
+            <option value="Other">Other</option>
+        </select>
+        <button class="btn btn-outline-success" type="submit">Filter</button>
+        <a class="btn" href="/recipes/recipe-list">Reset</a>            
+    </div>
 </form>
 
-<form action="/recipes/recipe-list" method="GET">
-<label>Level: 
-<select name="level">
-    <option value="">None</option>
-    <option value="Easy">Easy</option>
-    <option value="Medium">Medium</option>
-    <option value="Hard">Hard</option>
-</select>
-</label>
-<label>Dish Type: 
-<select name="dishType">
-    <option value="">None</option>
-    <option value="Breakfast">Breakfast</option>
-    <option value="Lunch">Lunch</option>
-    <option value="Snack">Snack</option>
-    <option value="Dinner">Dinner</option>
-    <option value="Dessert">Dessert</option>
-    <option value="Other">Other</option>
-</select>
-</label>
+{{!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Filter</button>
+<a href="/recipes/recipe-list">Reset</a> --}}
 
-<button type="submit">Filter</button>
-<a href="/recipes/recipe-list">Reset</a>
 </form>
 {{#each recipe}}
 <div class="card">
@@ -52,13 +97,15 @@
     </ol>
     <a href="/comments/comments-list/{{_id}}">Comments</a> 
     {{#if ../user.isAdmin}}
-    <span> | </span><a href="/recipes/edit-recipe/{{_id}}">Edit Recipe</a>
+    <a href="/recipes/edit-recipe/{{_id}}">Edit Recipe</a>
     <form action="/recipes/delete-recipe/{{_id}}" method="POST">
-        <button type="submit">Delete</button>
+        <button class="btn" type="submit">Delete</button>
     </form>
     {{/if}}
 </div>
 {{/each}}
+
+
     
 
 

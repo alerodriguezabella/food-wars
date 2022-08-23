@@ -30,7 +30,7 @@ require("./config/session.config")(app);
 const capitalized = require("./utils/capitalized");
 const projectName = "food-wars";
 
-app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
+app.locals.appTitle = 'Created with IronLauncher';
 
 app.use(logger("dev"));
 app.use(express.json());
