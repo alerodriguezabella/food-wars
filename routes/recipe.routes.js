@@ -13,7 +13,6 @@ router.get('/recipe-list', (req,res) => {
     }else if(level && dishType) {
         filter = {level: level, dishType: dishType}
     }
-    // console.log(filter)
     Recipe.find(
         filter
     )
