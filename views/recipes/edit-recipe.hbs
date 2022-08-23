@@ -1,6 +1,6 @@
 <a href="/recipes/recipe-list">Back</a>
 <h1>Edit Recipe</h1>
-<form action="/recipes/edit-recipe/{{_id}}" method="POST">
+<form action="/recipes/edit-recipe/{{_id}}" method="POST" enctype="multipart/form-data">
     <label> Title
       <input type="text" name="title" value="{{title}}">
     </label>
@@ -25,7 +25,8 @@
       <input type="text" name="duration" value="{{duration}}">
     </label>
     <label> Image
-      <input type="text" name="image" value="{{image}}">
+      <input type="file" name="image">
+      <input type="text" name="existingImage" hidden value="{{image}}">
     </label>
     <label>Ingredients:
       <textarea name="ingredients" rows="10" cols="50" placeholder="Separate each line with a semicolon (;)">

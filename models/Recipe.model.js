@@ -6,7 +6,7 @@ const recipeSchema = new Schema({
     ingredients: { type: [String], required: true },
     instructions: { type: [String], required: true },
     dishType: { type: String, enum: ["Breakfast", "Lunch", "Snack", "Dinner", "Dessert", "Other"] },
-    image: { type: String, default: "https://images.unsplash.com/photo-1628209694088-9aa9ac1c6463?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80" },
+    image: { type: String },
     duration: { type: Number, min: 0 },
     comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }]
   },
