@@ -2,6 +2,11 @@
     <a href="/recipes/new-recipe">Create Recipes</a>
 {{/if}}
 
+<form action="/recipes/recipe-list-search" method="GET">
+<input type="text" placeholder="Search" name="title">
+<button type="submit">Search</button>
+</form>
+
 <form action="/recipes/recipe-list" method="GET">
 <label>Level: 
 <select name="level">
