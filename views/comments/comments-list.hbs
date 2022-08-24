@@ -4,7 +4,7 @@
 <div class="review">
     <p>user: {{user.username}}</p>
     <p>Rating: {{rate}}</p>
-    <p>Comment: {{comment}}</p>
+    <p class="stars">Comment: {{comment}}</p>
     <a href="/comments/comment-edit/{{_id}}" class="btn">Edit</a>
     <form action="/comments/comment-delete{{_id}}" method="POST">
         <button class="btn" type="submit">Delete</button>
@@ -15,11 +15,11 @@
 <form action="/comments/comment-new/{{recipe._id}}" method="POST">
     <textarea name="comment" rows="4" cols="50" required></textarea>
     <select name="rate">
-    <option value="1">&#11088</option>
-    <option value="2">&#11088&#11088</option>
-    <option value="3">&#11088&#11088&#11088</option>
-    <option value="4">&#11088&#11088&#11088&#11088</option>
-    <option value="5">&#11088&#11088&#11088&#11088&#11088</option>
+    <option value="&#11088">&#11088</option>
+    <option value="&#11088&#11088">&#11088&#11088</option>
+    <option value="&#11088&#11088&#11088">&#11088&#11088&#11088</option>
+    <option value="&#11088&#11088&#11088&#11088">&#11088&#11088&#11088&#11088</option>
+    <option value="&#11088&#11088&#11088&#11088&#11088">&#11088&#11088&#11088&#11088&#11088</option>
     </select>
     <button class="btn" type="submit">Submit</button>
 </form>
