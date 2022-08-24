@@ -175,6 +175,10 @@ form {
   border: none;
 }
 
+.rating-star-comment {
+  margin: 0;
+}
+
 /* nav ul {
   border-bottom: 2px solid #CCD5AE;
   height: 30px;
