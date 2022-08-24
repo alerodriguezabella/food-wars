@@ -5,14 +5,16 @@
     <p>User: {{user.username}}</p>
     <p>Rating: {{rate}}</p>
     <p class="stars">Comment: {{comment}}</p>
+
     <a href="/comments/comment-edit/{{_id}}" class="btn">Edit</a>
     <form action="/comments/comment-delete{{_id}}" method="POST">
         <button class="btn" type="submit">Delete</button>
     </form>
+
 </div>
 {{/each}}
 
-{{#if currentuser}}
+{{#if user}}
 <form action="/comments/comment-new/{{recipe._id}}" method="POST">
 <div class="form-row">
     <div class="form-group col-md-6">
