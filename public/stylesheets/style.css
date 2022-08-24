@@ -170,7 +170,8 @@ form {
   justify-content: space-between;
 }
 
-.image-edit-recipe {
+.image-edit-recipe,
+.image-new-recipe {
   border: none;
 }
 

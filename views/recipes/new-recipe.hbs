@@ -1,4 +1,60 @@
 <a href="/recipes/recipe-list">Back</a>
+<h2>New Recipe</h2>
+<form action="/recipes/new-recipe" method="POST" enctype="multipart/form-data">
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" name="title" required class="form-control">
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Level</label>
+      <select class="custom-select form-control" name="level">
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label>Dish Type</label>
+      <select class="custom-select form-control" name="dishtype">
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Snack">Snack</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Duration</label>
+      <input type="number" name="duration" required class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Image</label>
+      <input type="file" name="image" class="image-new-recipe form-control">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Ingredients</label>
+    <textarea name="ingredients" rows="10" cols="50" placeholder="Separate each line with a semicolon (;)" required class="form-control"></textarea>
+  </div>
+
+  <div class="form-group">
+    <label>Instructions</label>
+    <textarea name="instructions"  rows="10" cols="50" placeholder="Separate each line with a semicolon (;)" required class="form-control"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+{{!-- ------------------------------------------- --}}
+
+{{!-- <a href="/recipes/recipe-list">Back</a>
 <h1>New Recipe</h1>
 <form action="/recipes/new-recipe" method="POST" enctype="multipart/form-data">
     <label> Title
@@ -26,7 +82,6 @@
     </label>
     <label> Image
       <input type="file" name="image"/>
-      {{!-- <input type="text" name="image"> --}}
     </label>
     <label>Ingredients:
       <textarea name="ingredients" rows="10" cols="50" placeholder="Separate each line with a semicolon (;)" required></textarea>
@@ -36,4 +91,4 @@
     </label>
 
     <button type="submit">Create</button>
-</form>
+</form> --}}

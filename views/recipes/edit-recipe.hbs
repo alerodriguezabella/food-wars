@@ -1,54 +1,3 @@
-{{!-- <a href="/recipes/recipe-list">Back</a>
-<h2>Edit Recipe</h2>
-<form action="/recipes/edit-recipe/{{_id}}" method="POST" enctype="multipart/form-data">
-    <label> Title
-      <input type="text" name="title" value="{{title}}">
-    </label>
-    <label> Level
-      <select class="custom-select" name="level">
-        <option value="Easy">Easy</option>
-        <option value="Medium">Medium</option>
-        <option value="Hard">Hard</option>
-      </select>
-    </label>
-    <label> Dish Type
-      <select class="custom-select" name="dishtype">
-        <option value="Breakfast">Breakfast</option>
-        <option value="Lunch">Lunch</option>
-        <option value="Snack">Snack</option>
-        <option value="Dinner">Dinner</option>
-        <option value="Dessert">Dessert</option>
-        <option value="Other">Other</option>
-      </select>
-    </label>
-    <label> Duration
-      <input type="text" name="duration" value="{{duration}}">
-    </label>
-    <label> Image
-      <input type="file" name="image">
-      <input type="text" name="existingImage" hidden value="{{image}}">
-    </label>
-    <label>Ingredients:
-      <textarea name="ingredients" rows="10" cols="50" placeholder="Separate each line with a semicolon (;)">
-{{#each ingredients}}
-{{this}};
-{{/each}}</textarea>
-    </label>
-    <label>Instructions:
-      <textarea name="instructions"  rows="10" cols="50" placeholder="Separate each line with a semicolon (;)">
-{{#each instructions}}
-{{this}};
-{{/each}}
-</textarea>
-    </label>
-
-    <button type="submit">Update</button>
-</form> --}}
-
-
-{{!-- ----------------------------------------- --}}
-
-
 <a href="/recipes/recipe-list">Back</a>
 <h2>Edit Recipe</h2>
 <form action="/recipes/edit-recipe/{{_id}}" method="POST" enctype="multipart/form-data">
@@ -111,3 +60,54 @@
 
   <button type="submit" class="btn btn-primary">Update</button>
 </form>
+
+
+{{!-- ------------------------------------------------------------- --}}
+
+
+{{!-- <a href="/recipes/recipe-list">Back</a>
+<h2>Edit Recipe</h2>
+<form action="/recipes/edit-recipe/{{_id}}" method="POST" enctype="multipart/form-data">
+    <label> Title
+      <input type="text" name="title" value="{{title}}">
+    </label>
+    <label> Level
+      <select class="custom-select" name="level">
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
+    </label>
+    <label> Dish Type
+      <select class="custom-select" name="dishtype">
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Snack">Snack</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Dessert">Dessert</option>
+        <option value="Other">Other</option>
+      </select>
+    </label>
+    <label> Duration
+      <input type="text" name="duration" value="{{duration}}">
+    </label>
+    <label> Image
+      <input type="file" name="image">
+      <input type="text" name="existingImage" hidden value="{{image}}">
+    </label>
+    <label>Ingredients:
+      <textarea name="ingredients" rows="10" cols="50" placeholder="Separate each line with a semicolon (;)">
+{{#each ingredients}}
+{{this}};
+{{/each}}</textarea>
+    </label>
+    <label>Instructions:
+      <textarea name="instructions"  rows="10" cols="50" placeholder="Separate each line with a semicolon (;)">
+{{#each instructions}}
+{{this}};
+{{/each}}
+</textarea>
+    </label>
+
+    <button type="submit">Update</button>
+</form> --}}
