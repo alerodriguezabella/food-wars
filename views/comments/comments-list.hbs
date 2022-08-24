@@ -1,5 +1,6 @@
-<a href="/recipes/recipe-list">Back</a>
-<h2>Reviews</h2>
+<div class="edir">
+<a href="/recipes/recipe-list" style="font-weight:bold; background-color:#523A28;">Back</a>
+<h2 class="fontbold">Reviews</h2>
 {{#each recipe.comments}}
 <div class="review">
     <p>User: {{user.username}}</p>
@@ -35,7 +36,7 @@
 </div>
 </form>
 {{/if}}
-
+</div>
 {{!-- ---------------------------------- --}}
 
 {{!-- {{#if currentuser}}
