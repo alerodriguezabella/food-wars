@@ -27,6 +27,14 @@ router.post("/signup", isLoggedOut,(req, res, next) => {
     return;
   }
 
+  User.findOne({ email })
+    .then((results) => {
+      //Check if user exists
+      if (results !== null) {
+        res.render("auth/signup", {
+          errorMessage: "This email already exists!",
+        })}})
+
   User.findOne({ username })
     .then((results) => {
       //Check if user exists
@@ -57,7 +65,7 @@ router.post("/signup", isLoggedOut,(req, res, next) => {
 
           newUser
             .save()
-            .then(() => res.redirect("/login"))
+            .then(() => res.redirect("/auth/login"))
             .catch((err) => next(err));
         })
         .catch((err) => next(err));

@@ -53,7 +53,7 @@ router.post('/new-recipe', isAdmin, fileUploader.single('image'), (req,res) => {
 router.get('/edit-recipe/:id', isAdmin, (req,res) => {
     const user =req.session.user;
     Recipe.findById(req.params.id)
-    .then(recipe => res.render('recipes/edit-recipe', {recipe,user}))
+    .then(recipe => res.render('recipes/edit-recipe', {recipe, user}))
     .catch(Err => console.error(Err))
 })
 
