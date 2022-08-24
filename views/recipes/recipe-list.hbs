@@ -7,7 +7,9 @@
 </ul> --}}
 
 {{#if user.isAdmin}}
-    <a href="/recipes/new-recipe" class="create">Create Recipes</a>
+<div class="form-group">
+    <a href="/recipes/new-recipe" class="btn form-control">Create Recipes</a>
+</div>
 {{/if}}
 
 {{!-- <form action="/recipes/recipe-list-search" method="GET"> --}}
@@ -51,7 +53,7 @@
 
 <form class="form-inline" action="/recipes/recipe-list" method="GET">
     <div class="form-row recipe-filter">
-        <input type="text" placeholder="Search" name="title" id="title">
+        <input type="text" class="search-bar" placeholder="Search" name="title" id="title">
         <select class="custom-select" name="level" id="level">
             <option value="">Level</option>
             <option value="Easy">Easy</option>
