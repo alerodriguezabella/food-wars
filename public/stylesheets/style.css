@@ -170,6 +170,10 @@ form {
   justify-content: space-between;
 }
 
+.image-edit-recipe {
+  border: none;
+}
+
 /* nav ul {
   border-bottom: 2px solid #CCD5AE;
   height: 30px;
