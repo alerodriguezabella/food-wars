@@ -43,18 +43,14 @@
   <div class="form-group">
     <label>Ingredients</label>
     <textarea name="ingredients" rows="10" cols="50" placeholder="Separate each line with a semicolon (;)" class="form-control">
-      {{#each ingredients}}
-      {{this}};
-      {{/each}}
+      {{#each ingredients}}{{this}};{{/each}}
     </textarea>
   </div>
 
   <div class="form-group">
     <label>Instructions</label>
     <textarea name="instructions"  rows="10" cols="50" placeholder="Separate each line with a semicolon (;)" class="form-control">
-      {{#each instructions}}
-      {{this}};
-      {{/each}}
+      {{#each instructions}}{{this}};{{/each}}
     </textarea>
   </div>
 

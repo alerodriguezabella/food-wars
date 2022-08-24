@@ -46,6 +46,15 @@ router.post("/signup", isLoggedOut,(req, res, next) => {
             password: hashedPassword,
           });
 
+          const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+
+  if (!regex.test(password) || password.length < 8) {
+    return res.status(400).render("auth/signup", {
+      errorMessage:
+        "Password needs to have at least 8 chars and must contain at least one number, one lowercase and one uppercase letter.",
+    });
+  }
+
           newUser
             .save()
             .then(() => res.redirect("/login"))
