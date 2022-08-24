@@ -1,62 +1,62 @@
-<div class="edir">
-<a href="/recipes/recipe-list" style="font-weight:bold; background-color:#523A28;">Back</a>
-<h2 class="fontbold">Edit Recipe</h2>
-<form action="/recipes/edit-recipe/{{recipe._id}}" method="POST" enctype="multipart/form-data">
-  <div class="form-group">
-    <label class="fontbold">Title</label>
-    <input type="text" name="title" value="{{recipe.title}}" class="form-control">
-  </div>
-
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label class="fontbold">Level</label>
-      <select class="custom-select form-control" name="level" value="{{recipe.level}}">
-        <option value="Easy">Easy</option>
-        <option value="Medium">Medium</option>
-        <option value="Hard">Hard</option>
-      </select>
+<div class="general-card">
+  <a href="/recipes/recipe-list" class="contrast-font">< Back</a>
+  <h2>Edit Recipe</h2>
+  <form action="/recipes/edit-recipe/{{recipe._id}}" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" name="title" value="{{recipe.title}}" class="form-control">
     </div>
-    <div class="form-group col-md-6">
-      <label class="fontbold">Dish Type</label>
-      <select class="custom-select form-control" name="dishType">
-        <option value="Breakfast">Breakfast</option>
-        <option value="Lunch">Lunch</option>
-        <option value="Snack">Snack</option>
-        <option value="Dinner">Dinner</option>
-        <option value="Dessert">Dessert</option>
-        <option value="Other">Other</option>
-      </select>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Level</label>
+        <select class="custom-select form-control" name="level" value="{{recipe.level}}">
+          <option value="Easy">Easy</option>
+          <option value="Medium">Medium</option>
+          <option value="Hard">Hard</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <label>Dish Type</label>
+        <select class="custom-select form-control" name="dishType">
+          <option value="Breakfast">Breakfast</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Snack">Snack</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Dessert">Dessert</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
     </div>
-  </div>
 
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label class="fontbold">Duration</label>
-      <input type="text" name="duration" value="{{recipe.duration}}" class="form-control">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label>Duration</label>
+        <input type="text" name="duration" value="{{recipe.duration}}" class="form-control">
+      </div>
+      <div class="form-group col-md-6">
+        <label>Image</label>
+        <input type="file" name="image" class="image-edit-recipe form-control">
+        <input type="text" name="existingImage" hidden value="{{recipe.image}}" class="form-control">
+      </div>
     </div>
-    <div class="form-group col-md-6">
-      <label class="fontbold">Image</label>
-      <input type="file" name="image" class="image-edit-recipe form-control">
-      <input type="text" name="existingImage" hidden value="{{recipe.image}}" class="form-control">
+
+    <div class="form-group">
+      <label>Ingredients</label>
+      <textarea name="ingredients" rows="10" cols="50" placeholder="Separate each line with a semicolon (;)" class="form-control">
+        {{#each recipe.ingredients}}{{this}};{{/each}}
+      </textarea>
     </div>
-  </div>
 
-  <div class="form-group">
-    <label class="fontbold">Ingredients</label>
-    <textarea name="ingredients" rows="10" cols="50" placeholder="Separate each line with a semicolon (;)" class="form-control">
-      {{#each recipe.ingredients}}{{this}};{{/each}}
-    </textarea>
-  </div>
+    <div class="form-group">
+      <label>Instructions</label>
+      <textarea name="instructions"  rows="10" cols="50" placeholder="Separate each line with a semicolon (;)" class="form-control">
+        {{#each recipe.instructions}}{{this}};{{/each}}
+      </textarea>
+    </div>
 
-  <div class="form-group">
-    <label class="fontbold">Instructions</label>
-    <textarea name="instructions"  rows="10" cols="50" placeholder="Separate each line with a semicolon (;)" class="form-control">
-      {{#each recipe.instructions}}{{this}};{{/each}}
-    </textarea>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Update</button>
-</form>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
 </div>
 
 
