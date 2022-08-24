@@ -1,39 +1,52 @@
+/* GENERAL */
+
 /* colors to use */
+/* https://coolors.co/palette/ccd5ae-e9edc9-fefae0-faedcd-d4a373 */
+/* #c5cea1 */
 /* #CCD5AE */
 /* #E9EDC9 */
 /* #faf7f0 */
 /* #FAEDCD */
 /* #D4A373 */
 
-
 body {
   padding: 50px;
-  font-family: 'Roboto', sans-serif;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+  font-family: "Quicksand", sans-serif;
+  min-width: 750px;
 }
- 
+
+.nav {
+  border-bottom: 2px solid #ccd5ae;
+  height: 60px;
+  padding-bottom: 60px;
+  margin-bottom: 30px;
+}
+
 a {
-  color: #CCD5AE;
+  color: #ccd5ae;
   text-decoration: none;
   font-size: 1.5em;
 }
- 
-form {
+
+a:hover {
+  color: #d4a373;
+  text-decoration: none;
+}
+
+/* form {
   margin: 30px auto;
   width: 380px;
-}
- 
-form label {
+} */
+
+/* form label {
   color: #CCD5AE;
   display: inline-block;
   margin-bottom: 10px;
   text-align: center;
   width: 100%;
-}
- 
-form input,
+} */
+
+/* form input,
 form button, 
 form textarea, 
 form select {
@@ -43,9 +56,9 @@ form select {
   padding: 4px;
   width: 100%;
   margin-bottom: 20px;
-}
- 
-form button {
+} */
+
+/* form button {
   background: #E9EDC9;
   border: 1px solid #E9EDC9;
   border-radius: 4px;
@@ -58,15 +71,52 @@ form button {
   text-transform: uppercase;
   transition: 0.3s ease background;
   width: 100%;
-}
- 
-form button:hover {
+} */
+
+/* form button:hover {
   background: #FAEDCD;
   border: 1px solid #FAEDCD;
   color: black;
   transition: 0.3s ease background;
+} */
+
+/* #form h2 {
+  display: flex;
+  justify-content: center;
+} */
+
+form {
+  padding: 10px 0;
 }
- 
+
+.form {
+  margin: 30px auto;
+  text-align: center;
+  align-items: center;
+  width: 380px;
+}
+
+.btn {
+  background: #e9edc9;
+  border: 1px solid #e9edc9;
+  border-radius: 4px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s ease background;
+}
+
+.btn:hover {
+  background: #faedcd;
+  border: 1px solid #faedcd;
+  color: black;
+  transition: 0.3s ease background;
+}
+
 .error {
   background: #f02b63;
   box-sizing: border-box;
@@ -75,47 +125,82 @@ form button:hover {
   padding: 20px;
   width: 100%;
 }
- 
-nav ul {
+
+/* INDEX */
+
+.index-title {
+  text-align: center;
+  font-size: 5em;
+  text-shadow: 4px 4px #ccd5ae;
+}
+
+.small-text {
+  font-size: 0.75em;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* RECIPES  */
+
+.recipe-filter {
+  flex: 1;
+  margin-left: 5px;
+}
+
+.recipe-filter > * {
+  margin-right: 5px;
+}
+
+.recipe-filter input {
+  flex: 1;
+}
+
+.admin-options {
+  display: flex;
+  flex-direction: row;
+}
+
+.admin-options .btn {
+  margin-right: 5px;
+}
+
+.recipe-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* nav ul {
   border-bottom: 2px solid #CCD5AE;
   height: 30px;
   padding: 1em 0;
   list-style-type: none;
-}
- 
-nav ul li {
-  line-height: 20px;
-}
- 
-#to-right {
+} */
+
+/* #to-right {
   padding: 1em;
   float: right;
-}
- 
-span {
+} */
+
+/* span {
   color: #CCD5AE;
   font-size: 1.5em;
-}
- 
-#form h2 {
-  display: flex;
-  justify-content: center;
-}
- 
+} */
+
 #to-left {
   float: left;
 }
- 
+
 #to-left p a {
   color: #000;
   font-weight: bold;
   font-size: 2em;
 }
- 
+
 #logout-form {
   display: inline;
 }
- 
+
 #logout-form button {
   width: 120px;
 }
@@ -125,13 +210,13 @@ span {
   height: 500px;
   object-fit: cover;
   border-radius: 10px;
+  margin-bottom: 15px;
 }
-
-
 
 .card {
   background-color: #faf7f0;
   padding: 50px;
+  border: none;
   margin: 20px 0;
   border-radius: 20px;
   /* display: flex;
@@ -141,8 +226,19 @@ span {
   margin: auto; */
 }
 
+.review {
+  background-color: #faf7f0;
+  padding: 50px;
+  border: none;
+  margin: 20px 0;
+  border-radius: 20px;
+}
+
 .justify {
   text-align: justify;
+}
+.quote-layout {
+  text-align: center;
 }
 
 .quote {

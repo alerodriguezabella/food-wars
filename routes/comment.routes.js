@@ -15,6 +15,7 @@ router.get('/comments-list/:id', isLoggedIn, (req,res) =>{
 			}
 		})
     .then( recipe => { console.log(recipe.comments)
+        // map the comments > rating number to stars 
         res.render('comments/comments-list', {recipe, currentuser})})
     .catch( Err => console.error(Err))
 })
