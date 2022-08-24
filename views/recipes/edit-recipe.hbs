@@ -1,15 +1,15 @@
 <a href="/recipes/recipe-list">Back</a>
 <h2>Edit Recipe</h2>
-<form action="/recipes/edit-recipe/{{_id}}" method="POST" enctype="multipart/form-data">
+<form action="/recipes/edit-recipe/{{recipe._id}}" method="POST" enctype="multipart/form-data">
   <div class="form-group">
     <label>Title</label>
-    <input type="text" name="title" value="{{title}}" class="form-control">
+    <input type="text" name="title" value="{{recipe.title}}" class="form-control">
   </div>
 
   <div class="form-row">
     <div class="form-group col-md-6">
       <label>Level</label>
-      <select class="custom-select form-control" name="level">
+      <select class="custom-select form-control" name="level" value="{{recipe.level}}">
         <option value="Easy">Easy</option>
         <option value="Medium">Medium</option>
         <option value="Hard">Hard</option>
@@ -17,7 +17,7 @@
     </div>
     <div class="form-group col-md-6">
       <label>Dish Type</label>
-      <select class="custom-select form-control" name="dishtype">
+      <select class="custom-select form-control" name="dishType">
         <option value="Breakfast">Breakfast</option>
         <option value="Lunch">Lunch</option>
         <option value="Snack">Snack</option>
@@ -31,26 +31,26 @@
   <div class="form-row">
     <div class="form-group col-md-6">
       <label>Duration</label>
-      <input type="text" name="duration" value="{{duration}}" class="form-control">
+      <input type="text" name="duration" value="{{recipe.duration}}" class="form-control">
     </div>
     <div class="form-group col-md-6">
       <label>Image</label>
       <input type="file" name="image" class="image-edit-recipe form-control">
-      <input type="text" name="existingImage" hidden value="{{image}}" class="form-control">
+      <input type="text" name="existingImage" hidden value="{{recipe.image}}" class="form-control">
     </div>
   </div>
 
   <div class="form-group">
     <label>Ingredients</label>
     <textarea name="ingredients" rows="10" cols="50" placeholder="Separate each line with a semicolon (;)" class="form-control">
-      {{#each ingredients}}{{this}};{{/each}}
+      {{#each recipe.ingredients}}{{this}};{{/each}}
     </textarea>
   </div>
 
   <div class="form-group">
     <label>Instructions</label>
     <textarea name="instructions"  rows="10" cols="50" placeholder="Separate each line with a semicolon (;)" class="form-control">
-      {{#each instructions}}{{this}};{{/each}}
+      {{#each recipe.instructions}}{{this}};{{/each}}
     </textarea>
   </div>
 
