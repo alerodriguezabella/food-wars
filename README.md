@@ -17,7 +17,7 @@ List of implemented features after the MVP:
 
 - Use of external API (views/index.hbs)
     - Use of external API (*food quote of the day*)
-    - API: https://api-ninjas.com/api/quotes
+    - [API used](https://api-ninjas.com/api/quotes)
 - Login (views/auth/login.hbs)
     - Social media login (Google)
 - Style (public/stylesheets/style.css)
@@ -146,6 +146,6 @@ const commentSchema = new Schema({
 ```
 
 ## Links
-- [Slides Link](https://docs.google.com/presentation/d/1URDTppHS15OoqX4GZJir0E7xMJVKYbRotkACVFyiYxg/edit#slide=id.p6)
-- [Github repository Link](https://github.com/alerodriguezabella/food-wars.git)
-- [Deployment Link](http://food-wars-ironhack.herokuapp.com/)
+- [Slides link](https://docs.google.com/presentation/d/1URDTppHS15OoqX4GZJir0E7xMJVKYbRotkACVFyiYxg/edit#slide=id.p6)
+- [Github repository link](https://github.com/alerodriguezabella/food-wars.git)
+- [Deployment link](http://food-wars-ironhack.herokuapp.com/)
