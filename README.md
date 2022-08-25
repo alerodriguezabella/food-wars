@@ -4,7 +4,7 @@ Click [here](http://food-wars-ironhack.herokuapp.com/) to see the deployed app
 ## Description
 Brief description of the project:
 
-*Food Wars* is a recipe blog app where you'll find different and delicious recipes. A food related quote, chosen randomly, will appear every time you go to the home page; setting the mood for your cooking. If you are logged in, you will also be able to check comments and scores of each recipe. 
+*Food Wars* is a recipe blog app where you'll find different and delicious recipes. A food related quote, chosen randomly, will appear every time you go to the home page, setting the mood for your cooking. If you are logged in, you will also be able to check the comments and scores of each recipe. 
 
 A bit more information about the three available ranks:
 - Admin: able to add, edit and delete the available recipes; able to add comments; able to edit and delete comments added by them
@@ -146,6 +146,6 @@ const commentSchema = new Schema({
 ```
 
 ## Links
-- [Slides Link](#)
+- [Slides Link](https://docs.google.com/presentation/d/1URDTppHS15OoqX4GZJir0E7xMJVKYbRotkACVFyiYxg/edit#slide=id.p6)
 - [Github repository Link](https://github.com/alerodriguezabella/food-wars.git)
 - [Deployment Link](http://food-wars-ironhack.herokuapp.com/)
