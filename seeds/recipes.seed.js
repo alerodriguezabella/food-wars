@@ -1,7 +1,10 @@
+require('dotenv').config();
 const mongoose = require("mongoose");
 const Recipe = require("../models/Recipe.model");
 const data = require("../data");
 const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/food-wars";
+
+console.log(process.env)
 
 mongoose
   .connect(MONGO_URI)
