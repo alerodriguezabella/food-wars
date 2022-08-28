@@ -24,10 +24,10 @@
     "passport": "^0.6.0",
     "passport-google-oauth": "^2.0.0",
     "passport-local": "^1.0.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "nodemon": "^2.0.19"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
   },
   "engines": {
     "node": "16.x"
